@@ -25,6 +25,19 @@ public class Team {
         players.add(player);
     }
 
+    public void removePlayer(Player player) {
+        players.remove(player);
+    }
+
+    public void removePlayerByPlayerID(int playerID) {
+        for (Player player : players) {
+            int id = player.getPlayerID();
+            if (id == playerID) {
+                removePlayer(player);
+            }
+        }
+    }
+
     public void displayPlayers(){
         for (Player player : players) {
             player.playerInfo();
