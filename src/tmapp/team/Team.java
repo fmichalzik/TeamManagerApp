@@ -9,9 +9,14 @@ import java.util.ArrayList;
 public class Team {
 
     private String teamName;
-
     // Creates a list to hold player objects
     private ArrayList<Player> players;
+
+    // disciplines
+    private Player maleSingles1;
+    private Player maleSingles2;
+    private Player maleSingles3;
+    private String noFemaleInMale = "Cannot assign a female player for male player discipline.";
 
     // Constructor to instanciate a team with a team name and a list of players
     public Team(String teamName, ArrayList<Player> players) {
@@ -68,13 +73,41 @@ public class Team {
         players.removeAll(femalePlayers);
     }
 
-
     // Shows playerInfo per player in the players list
     public void displayPlayers(){
         for (Player player : players) {
             player.playerInfo();
         }
     }
+
+
+    public void assignPlayerForMs1(Player player) {
+        if (player instanceof FemalePlayer) {
+            System.out.println(noFemaleInMale);
+        }
+        else {
+            maleSingles1 = player;
+        }
+    }
+
+    public void assignPlayerForMs2(Player player) {
+        if (player instanceof FemalePlayer) {
+            System.out.println(noFemaleInMale);
+        }
+        else {
+            maleSingles2 = player;
+        }
+    }
+
+    public void assignPlayerForMs3(Player player) {
+        if (player instanceof FemalePlayer) {
+            System.out.println(noFemaleInMale);
+        }
+        else {
+            maleSingles3 = player;
+        }
+    }
+
 
     public String getTeamName() {
         return teamName;
@@ -83,4 +116,17 @@ public class Team {
     public void setTeamName(String teamName) {
         this.teamName = teamName;
     }
+
+    public Player getMaleSingles1() {
+        return maleSingles1;
+    }
+
+    public Player getMaleSingles2() {
+        return maleSingles2;
+    }
+
+    public Player getMaleSingles3() {
+        return maleSingles3;
+    }
+
 }

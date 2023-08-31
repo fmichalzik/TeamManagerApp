@@ -6,7 +6,6 @@ import tmapp.player.Player;
 import tmapp.team.Team;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,10 +22,16 @@ public class Main {
         System.out.println(team.getTeamName());
         team.displayPlayers();
 
-        System.out.println("Remove all male Players");
-        team.removeAllMalePlayers();
+        team.assignPlayerForMs1((player1));
+        team.assignPlayerForMs1((player2));
+        team.getMaleSingles1().playerInfo();
+        team.assignPlayerForMs2(player3);
+        team.getMaleSingles2().playerInfo();
+
+        //System.out.println("Remove all male Players");
+        //team.removeAllMalePlayers();
         //team.removePlayerByPlayerID(2);
-        team.displayPlayers();
+        //team.displayPlayers();
 
     }
 
