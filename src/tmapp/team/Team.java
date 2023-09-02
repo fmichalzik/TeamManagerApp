@@ -16,7 +16,9 @@ public class Team {
     private Player maleSingles1;
     private Player maleSingles2;
     private Player maleSingles3;
+    private Player femaleSingles;
     private String noFemaleInMale = "Cannot assign a female player for male player discipline.";
+    private String noMaleInFemale = "Cannot assign a male player for female player discipline.";
 
     // Constructor to instanciate a team with a team name and a list of players
     public Team(String teamName, ArrayList<Player> players) {
@@ -105,6 +107,15 @@ public class Team {
         }
         else {
             maleSingles3 = player;
+        }
+    }
+
+    public void assignPlayerForFs(Player player) {
+        if (player instanceof MalePlayer) {
+            System.out.println(noMaleInFemale);
+        }
+        else {
+            femaleSingles = player;
         }
     }
 
