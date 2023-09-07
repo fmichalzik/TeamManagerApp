@@ -13,6 +13,7 @@ public class Main {
         Player player1 = new FemalePlayer(1, "Maxine Mustermann", 27, 1);
         Player player2 = new MalePlayer(2, "Max Mustermann", 35, 2);
         Player player3 = new MalePlayer(3, "Klaus Staplerfahrer", 55, 55);
+        Player player4 = new MalePlayer(4, "Frank Tank", 45, 5);
 
         Team team = new Team("Geiles Team", new ArrayList<>());
         team.addPlayer(player1);
@@ -27,6 +28,13 @@ public class Main {
         team.getMaleSingles1().playerInfo();
         team.assignPlayerForMs2(player3);
         team.getMaleSingles2().playerInfo();
+
+        team.addPlayerToMensDoubles(player1);
+        team.addPlayerToMensDoubles(player2);
+        team.addPlayerToMensDoubles(player4);
+        team.addPlayerToMensDoubles(player3);
+
+        team.displayMensDoubles();
 
         //System.out.println("Remove all male Players");
         //team.removeAllMalePlayers();
