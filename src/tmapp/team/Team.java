@@ -14,6 +14,8 @@ public class Team {
 
     private ArrayList<Player> mensDoubles = new ArrayList<>();
 
+    private ArrayList<Player> womensDoubles = new ArrayList<>();
+
     // disciplines
     private Player maleSingles1;
     private Player maleSingles2;
@@ -138,6 +140,24 @@ public class Team {
         System.out.println("    >>> Mens Doubles <<<    ");
         mensDoubles.forEach(Player::playerInfo);
     }
+
+    public void addPlayerToWomensDoubles(Player player) {
+        if (player instanceof MalePlayer) {
+            System.out.println(noMaleInFemale);
+        }
+        else if (womensDoubles.size() >= 2) {
+            System.out.println("There are already two players assigned for women doubles.");
+        }
+        else {
+            womensDoubles.add(player);
+        }
+    }
+
+    public void displayWomensDoubles() {
+        System.out.println("    >>> Women Doubles <<<    ");
+        womensDoubles.forEach(Player::playerInfo);
+    }
+
 
     public String getTeamName() {
         return teamName;
