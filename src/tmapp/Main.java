@@ -30,12 +30,12 @@ public class Main {
         team.assignPlayerForMs2(player3);
         team.getMaleSingles2().playerInfo();
 
-        team.addPlayerToMensDoubles(player1);
-        team.addPlayerToMensDoubles(player2);
-        team.addPlayerToMensDoubles(player4);
-        team.addPlayerToMensDoubles(player3);
+        team.addPlayerToMensDoubles1(player1);
+        team.addPlayerToMensDoubles1(player2);
+        team.addPlayerToMensDoubles1(player4);
+        team.addPlayerToMensDoubles1(player3);
 
-        team.displayMensDoubles();
+        team.displayMensDoubles1();
 
         team.addPlayerToWomensDoubles(player2);
         team.addPlayerToWomensDoubles(player1);

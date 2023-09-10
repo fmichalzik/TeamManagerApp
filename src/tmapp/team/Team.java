@@ -12,7 +12,8 @@ public class Team {
     // Creates a list to hold player objects
     private ArrayList<Player> players;
 
-    private ArrayList<Player> mensDoubles = new ArrayList<>();
+    private ArrayList<Player> mensDoubles1 = new ArrayList<>();
+    private ArrayList<Player> mensDoubles2 = new ArrayList<>();
 
     private ArrayList<Player> womensDoubles = new ArrayList<>();
 
@@ -124,21 +125,38 @@ public class Team {
         }
     }
 
-    public void addPlayerToMensDoubles(Player player) {
+    public void addPlayerToMensDoubles1(Player player) {
         if (player instanceof FemalePlayer) {
             System.out.println(noFemaleInMale);
         }
-        else if (mensDoubles.size() >= 2) {
+        else if (mensDoubles1.size() >= 2) {
             System.out.println("There are already two players assigned for mens doubles.");
         }
         else {
-            mensDoubles.add(player);
+            mensDoubles1.add(player);
         }
     }
 
-    public void displayMensDoubles() {
-        System.out.println("    >>> Mens Doubles <<<    ");
-        mensDoubles.forEach(Player::playerInfo);
+    public void addPlayerToMensDoubles2(Player player) {
+        if (player instanceof FemalePlayer) {
+            System.out.println(noFemaleInMale);
+        }
+        else if (mensDoubles2.size() >= 2) {
+            System.out.println("There are already two players assigned for mens doubles.");
+        }
+        else {
+            mensDoubles2.add(player);
+        }
+    }
+
+    public void displayMensDoubles1() {
+        System.out.println("    >>> Mens Doubles 1 <<<    ");
+        mensDoubles1.forEach(Player::playerInfo);
+    }
+
+    public void displayMensDoubles2() {
+        System.out.println("    >>> Mens Doubles 2 <<<    ");
+        mensDoubles2.forEach(Player::playerInfo);
     }
 
     public void addPlayerToWomensDoubles(Player player) {
