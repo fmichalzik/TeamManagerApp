@@ -44,6 +44,10 @@ public class Main {
 
         team.displayWomensDoubles();
 
+        team.clearDoubles(team.getWomensDoubles());
+
+        team.displayWomensDoubles();
+
         //System.out.println("Remove all male Players");
         //team.removeAllMalePlayers();
         //team.removePlayerByPlayerID(2);

@@ -12,18 +12,17 @@ public class Team {
     // Creates a list to hold player objects
     private ArrayList<Player> players;
 
+    // disciplines
     private ArrayList<Player> mensDoubles1 = new ArrayList<>();
     private ArrayList<Player> mensDoubles2 = new ArrayList<>();
-
     private ArrayList<Player> womensDoubles = new ArrayList<>();
-
-    // disciplines
     private Player maleSingles1;
     private Player maleSingles2;
     private Player maleSingles3;
     private Player femaleSingles;
     private String noFemaleInMale = "Cannot assign a female player for male player discipline.";
     private String noMaleInFemale = "Cannot assign a male player for female player discipline.";
+    private String noPlayerInDiscipline = "No player/players assigned for this discipline.";
 
     // Constructor to instanciate a team with a team name and a list of players
     public Team(String teamName, ArrayList<Player> players) {
@@ -150,13 +149,23 @@ public class Team {
     }
 
     public void displayMensDoubles1() {
-        System.out.println("    >>> Mens Doubles 1 <<<    ");
-        mensDoubles1.forEach(Player::playerInfo);
+        if (mensDoubles1.isEmpty()) {
+            System.out.println(noPlayerInDiscipline);
+        }
+        else {
+            System.out.println("    >>> Mens Doubles 1 <<<    ");
+            mensDoubles1.forEach(Player::playerInfo);
+        }
     }
 
     public void displayMensDoubles2() {
-        System.out.println("    >>> Mens Doubles 2 <<<    ");
-        mensDoubles2.forEach(Player::playerInfo);
+        if (mensDoubles2.isEmpty()) {
+            System.out.println(noPlayerInDiscipline);
+        }
+        else {
+            System.out.println("    >>> Mens Doubles 2 <<<    ");
+            mensDoubles2.forEach(Player::playerInfo);
+        }
     }
 
     public void addPlayerToWomensDoubles(Player player) {
@@ -172,8 +181,18 @@ public class Team {
     }
 
     public void displayWomensDoubles() {
-        System.out.println("    >>> Women Doubles <<<    ");
-        womensDoubles.forEach(Player::playerInfo);
+        if (womensDoubles.isEmpty()) {
+            System.out.println(noPlayerInDiscipline);
+        }
+        else {
+            System.out.println("    >>> Women Doubles <<<    ");
+            womensDoubles.forEach(Player::playerInfo);
+        }
+    }
+
+    public void clearDoubles (ArrayList<Player> doublesDiscipline) {
+        doublesDiscipline.clear();
+        System.out.println("Removed players from discipline.");
     }
 
 
@@ -197,4 +216,15 @@ public class Team {
         return maleSingles3;
     }
 
+    public ArrayList<Player> getMensDoubles1() {
+        return mensDoubles1;
+    }
+
+    public ArrayList<Player> getMensDoubles2() {
+        return mensDoubles2;
+    }
+
+    public ArrayList<Player> getWomensDoubles() {
+        return womensDoubles;
+    }
 }
