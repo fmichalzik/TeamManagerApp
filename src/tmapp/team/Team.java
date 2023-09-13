@@ -16,6 +16,7 @@ public class Team {
     private ArrayList<Player> mensDoubles1 = new ArrayList<>();
     private ArrayList<Player> mensDoubles2 = new ArrayList<>();
     private ArrayList<Player> womensDoubles = new ArrayList<>();
+    private ArrayList<Player> mixedDoubles = new ArrayList<>();
     private Player maleSingles1;
     private Player maleSingles2;
     private Player maleSingles3;
@@ -190,6 +191,38 @@ public class Team {
         }
     }
 
+    public void addPlayerToMixedDoubles(Player player) {
+        int male = 0;
+        int female = 0;
+        for (Player p : mixedDoubles) {
+            if (p instanceof FemalePlayer) {
+                female ++;
+            }
+            else {
+                male ++;
+            }
+        }
+        if ((player instanceof FemalePlayer && female >= 1) || (player instanceof MalePlayer && male >=1)) {
+            System.out.println("There can only be one female/male player each in mixed doubles.");
+        }
+        else if (mixedDoubles.size() >= 2) {
+            System.out.println("There are already two players assigned for mixed doubles.");
+        }
+        else {
+            mixedDoubles.add(player);
+        }
+    }
+
+    public void displayMixedDoubles() {
+        if (mixedDoubles.isEmpty()) {
+            System.out.println(noPlayerInDiscipline);
+        }
+        else {
+            System.out.println("    >>> Mixed Doubles <<<    ");
+            mixedDoubles.forEach(Player::playerInfo);
+        }
+    }
+
     public void clearDoubles (ArrayList<Player> doublesDiscipline) {
         doublesDiscipline.clear();
         System.out.println("Removed players from discipline.");
@@ -226,5 +259,9 @@ public class Team {
 
     public ArrayList<Player> getWomensDoubles() {
         return womensDoubles;
+    }
+
+    public ArrayList<Player> getMixedDoubles() {
+        return mixedDoubles;
     }
 }

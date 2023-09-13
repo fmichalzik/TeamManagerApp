@@ -48,6 +48,12 @@ public class Main {
 
         team.displayWomensDoubles();
 
+        team.addPlayerToMixedDoubles(player1);
+        team.addPlayerToMixedDoubles(player2);
+        team.addPlayerToMixedDoubles(player5);
+
+        team.displayMixedDoubles();
+
         //System.out.println("Remove all male Players");
         //team.removeAllMalePlayers();
         //team.removePlayerByPlayerID(2);
