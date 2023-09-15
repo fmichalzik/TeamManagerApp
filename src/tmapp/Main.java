@@ -26,9 +26,9 @@ public class Main {
 
         team.assignPlayerForMs1((player1));
         team.assignPlayerForMs1((player2));
-        team.getMaleSingles1().playerInfo();
+        team.getMenSingles1().playerInfo();
         team.assignPlayerForMs2(player3);
-        team.getMaleSingles2().playerInfo();
+        team.getMenSingles2().playerInfo();
 
         team.addPlayerToMensDoubles1(player1);
         team.addPlayerToMensDoubles1(player2);

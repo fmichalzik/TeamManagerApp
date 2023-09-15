@@ -17,10 +17,10 @@ public class Team {
     private ArrayList<Player> mensDoubles2 = new ArrayList<>();
     private ArrayList<Player> womensDoubles = new ArrayList<>();
     private ArrayList<Player> mixedDoubles = new ArrayList<>();
-    private Player maleSingles1;
-    private Player maleSingles2;
-    private Player maleSingles3;
-    private Player femaleSingles;
+    private Player menSingles1;
+    private Player menSingles2;
+    private Player menSingles3;
+    private Player womenSingles;
     private String noFemaleInMale = "Cannot assign a female player for male player discipline.";
     private String noMaleInFemale = "Cannot assign a male player for female player discipline.";
     private String noPlayerInDiscipline = "No player/players assigned for this discipline.";
@@ -87,44 +87,48 @@ public class Team {
         }
     }
 
-
+    // Adds player for men's singles 1 - checks if it is a male player
     public void assignPlayerForMs1(Player player) {
         if (player instanceof FemalePlayer) {
             System.out.println(noFemaleInMale);
         }
         else {
-            maleSingles1 = player;
+            menSingles1 = player;
         }
     }
 
+    // Adds player for men's singles 2 - checks if it is a male player
     public void assignPlayerForMs2(Player player) {
         if (player instanceof FemalePlayer) {
             System.out.println(noFemaleInMale);
         }
         else {
-            maleSingles2 = player;
+            menSingles2 = player;
         }
     }
 
+    // Adds player for men's singles 3 - checks if it is a male player
     public void assignPlayerForMs3(Player player) {
         if (player instanceof FemalePlayer) {
             System.out.println(noFemaleInMale);
         }
         else {
-            maleSingles3 = player;
+            menSingles3 = player;
             System.out.println("Player assigned for Mens Doubles.");
         }
     }
 
+    // Adds player for women's singles - checks if it is a female player
     public void assignPlayerForFs(Player player) {
         if (player instanceof MalePlayer) {
             System.out.println(noMaleInFemale);
         }
         else {
-            femaleSingles = player;
+            womenSingles = player;
         }
     }
 
+    // Adds players for men's doubles - checks if it is a male player and if full
     public void addPlayerToMensDoubles1(Player player) {
         if (player instanceof FemalePlayer) {
             System.out.println(noFemaleInMale);
@@ -137,6 +141,7 @@ public class Team {
         }
     }
 
+    // Adds players for men's doubles - checks if it is a male player and if full
     public void addPlayerToMensDoubles2(Player player) {
         if (player instanceof FemalePlayer) {
             System.out.println(noFemaleInMale);
@@ -149,6 +154,7 @@ public class Team {
         }
     }
 
+    // Displays the player/players in discipline
     public void displayMensDoubles1() {
         if (mensDoubles1.isEmpty()) {
             System.out.println(noPlayerInDiscipline);
@@ -159,6 +165,7 @@ public class Team {
         }
     }
 
+    // Displays the player/players in discipline
     public void displayMensDoubles2() {
         if (mensDoubles2.isEmpty()) {
             System.out.println(noPlayerInDiscipline);
@@ -169,6 +176,7 @@ public class Team {
         }
     }
 
+    // Adds players for women's doubles - checks if it is a female player and if full
     public void addPlayerToWomensDoubles(Player player) {
         if (player instanceof MalePlayer) {
             System.out.println(noMaleInFemale);
@@ -181,6 +189,7 @@ public class Team {
         }
     }
 
+    // Displays the player/players in discipline
     public void displayWomensDoubles() {
         if (womensDoubles.isEmpty()) {
             System.out.println(noPlayerInDiscipline);
@@ -191,6 +200,7 @@ public class Team {
         }
     }
 
+    // Adds players for mixed doubles - checks that there is only one player each (gender) and if full
     public void addPlayerToMixedDoubles(Player player) {
         int male = 0;
         int female = 0;
@@ -213,6 +223,7 @@ public class Team {
         }
     }
 
+    // Displays the player/players in discipline
     public void displayMixedDoubles() {
         if (mixedDoubles.isEmpty()) {
             System.out.println(noPlayerInDiscipline);
@@ -223,6 +234,7 @@ public class Team {
         }
     }
 
+    // Clears the doubles discipline that is passed in
     public void clearDoubles (ArrayList<Player> doublesDiscipline) {
         doublesDiscipline.clear();
         System.out.println("Removed players from discipline.");
@@ -237,16 +249,16 @@ public class Team {
         this.teamName = teamName;
     }
 
-    public Player getMaleSingles1() {
-        return maleSingles1;
+    public Player getMenSingles1() {
+        return menSingles1;
     }
 
-    public Player getMaleSingles2() {
-        return maleSingles2;
+    public Player getMenSingles2() {
+        return menSingles2;
     }
 
-    public Player getMaleSingles3() {
-        return maleSingles3;
+    public Player getMenSingles3() {
+        return menSingles3;
     }
 
     public ArrayList<Player> getMensDoubles1() {
