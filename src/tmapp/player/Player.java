@@ -6,10 +6,10 @@ public abstract class Player {
     private char playerGender;
     private int playerAge;
     private int playerRank;
-    private boolean femaleSingles;
-    private boolean femaleDoubles;
-    private boolean maleSingles;
-    private boolean maleDoubles;
+    private boolean womenSingles;
+    private boolean womensDoubles;
+    private boolean menSingles;
+    private boolean mensDoubles;
     private boolean mixedDoubles;
 
     public Player(int playerID, String playerName, int playerAge, int playerRank) {
@@ -59,36 +59,36 @@ public abstract class Player {
         this.playerRank = playerRank;
     }
 
-    public boolean isFemaleSingles() {
-        return femaleSingles;
+    public boolean isWomenSingles() {
+        return womenSingles;
     }
 
-    public void setFemaleSingles(boolean femaleSingles) {
-        this.femaleSingles = femaleSingles;
+    public void setWomenSingles(boolean womenSingles) {
+        this.womenSingles = womenSingles;
     }
 
-    public boolean isFemaleDoubles() {
-        return femaleDoubles;
+    public boolean isWomensDoubles() {
+        return womensDoubles;
     }
 
-    public void setFemaleDoubles(boolean femaleDoubles) {
-        this.femaleDoubles = femaleDoubles;
+    public void setWomensDoubles(boolean womensDoubles) {
+        this.womensDoubles = womensDoubles;
     }
 
-    public boolean isMaleSingles() {
-        return maleSingles;
+    public boolean isMenSingles() {
+        return menSingles;
     }
 
-    public void setMaleSingles(boolean maleSingles) {
-        this.maleSingles = maleSingles;
+    public void setMenSingles(boolean menSingles) {
+        this.menSingles = menSingles;
     }
 
-    public boolean isMaleDoubles() {
-        return maleDoubles;
+    public boolean isMensDoubles() {
+        return mensDoubles;
     }
 
-    public void setMaleDoubles(boolean maleDoubles) {
-        this.maleDoubles = maleDoubles;
+    public void setMensDoubles(boolean mensDoubles) {
+        this.mensDoubles = mensDoubles;
     }
 
     public boolean isMixedDoubles() {
@@ -106,13 +106,13 @@ public abstract class Player {
         System.out.println("\tAge: " + playerAge);
         System.out.println("\tGender: " + playerGender);
         if (playerGender == 'f') {
-            System.out.println("\tFemale Singles: " + femaleSingles);
-            System.out.println("\tFemale Doubles: " + femaleDoubles);
+            System.out.println("\tFemale Singles: " + womenSingles);
+            System.out.println("\tFemale Doubles: " + womensDoubles);
             System.out.println("\tMixed Doubles: " + mixedDoubles);
         }
         if (playerGender == 'm') {
-            System.out.println("\tMale Singles: " + maleSingles);
-            System.out.println("\tMale Doubles: " + maleDoubles);
+            System.out.println("\tMale Singles: " + menSingles);
+            System.out.println("\tMale Doubles: " + mensDoubles);
             System.out.println("\tMixed Doubles: " + mixedDoubles);
         }
     }
