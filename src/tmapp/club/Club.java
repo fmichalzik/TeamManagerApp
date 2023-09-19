@@ -27,6 +27,25 @@ public class Club {
         malePlayersInCLub.add(new MalePlayer(playerID, playerName, playerAge, playerRank));
     }
 
+    public void displayAllMalePlayersInClub() {
+        System.out.println("    >>> Men <<<    ");
+        for (Player player : malePlayersInCLub) {
+            player.playerInfo();
+        }
+    }
+
+    public void displayAllFemalePlayersInClub() {
+        System.out.println("    >>> Women <<<    ");
+        for (Player player : femalePlayersInCLub) {
+            player.playerInfo();
+        }
+    }
+
+    public void displayAllPlayersInCLub() {
+        System.out.println("    >>> Players of " + clubName + " <<<    ");
+        displayAllMalePlayersInClub();
+        displayAllFemalePlayersInClub();
+    }
 
     // Getter & Setter
 
