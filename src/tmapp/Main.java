@@ -1,5 +1,6 @@
 package tmapp;
 
+import tmapp.club.Club;
 import tmapp.player.FemalePlayer;
 import tmapp.player.MalePlayer;
 import tmapp.player.Player;
@@ -9,6 +10,17 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+
+        Club myClub = new Club("BC Hiddinghausen");
+
+        myClub.addMalePlayerToClub(123, "Peter Lustig", 46, 6);
+        myClub.addMalePlayerToClub(111, "Peter Beispiel", 38, 5);
+        myClub.addMalePlayerToClub(122, "Frodo Beutlin", 24, 12);
+        myClub.addFemalePlayerToClub(1, "Maxine Mustermann", 27, 1);
+        myClub.addFemalePlayerToClub(1, "Anne Boss", 45, 6);
+
+        myClub.displayAllPlayersInCLub();
+
 
         Player player1 = new FemalePlayer(1, "Maxine Mustermann", 27, 1);
         Player player2 = new MalePlayer(2, "Max Mustermann", 35, 2);
